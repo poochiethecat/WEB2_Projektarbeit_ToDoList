@@ -13,6 +13,7 @@ Meilensteine & Abgaben
 ----------------------
 
 Um die Komplexität zu reduzieren wird die Pendenzenlisten Applikation in drei Iterationen erstellt. Diese Meilensteine werden einzeln abgegeben und bewertet:  
+
 1. Pendenzenliste als Javascript Objekte  
 2. Dynamische HTML Seite  
 3. Pendenzenliste über Web-Schnittstelle lesen und persistieren  
