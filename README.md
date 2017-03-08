@@ -1,7 +1,8 @@
 # WEB2_Projektarbeit_ToDoList
 Projektziel
+===========
 
-Erstellen Sie eine Pendenzenlisten Applikation1 mit:
+Erstellen Sie eine Pendenzenlisten Applikation mit:
 - Responsive Layout
 - 2-Tier Architektur
 - RESTful Schnittstelle
