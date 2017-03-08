@@ -1,6 +1,6 @@
 # WEB2_Projektarbeit_ToDoList
 Projektziel
-===========
+-----------
 
 Erstellen Sie eine Pendenzenlisten Applikation mit:
 - Responsive Layout
@@ -10,6 +10,7 @@ Erstellen Sie eine Pendenzenlisten Applikation mit:
 - Serverseitiger Persistenz
 
 Meilensteine & Abgaben
+......................
 
 Um die Komplexität zu reduzieren wird die Pendenzenlisten Applikation in drei Iterationen erstellt. Diese Meilensteine werden einzeln abgegeben und bewertet:
 1. Pendenzenliste als Javascript Objekte  
