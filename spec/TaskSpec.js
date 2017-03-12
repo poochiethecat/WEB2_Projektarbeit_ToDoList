@@ -18,7 +18,7 @@ describe("Task", function() {
 
 	describe("when creating new task", function() {
 		emptytask = new Task("EmptyTask");
-		it("it should be 'not done' by default", function() {
+		it("should be 'not done' by default", function() {
 			expect(emptytask.done).toBeFalsy();
 		});
 	});

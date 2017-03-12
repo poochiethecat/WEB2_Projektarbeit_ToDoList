@@ -33,7 +33,7 @@ describe("TaskList", function() {
 			expect(tasklist2.taskarray).not.toContain(test2task);
 		});
 
-		it("should not allow to remove a song that is not in the tasklist", function() {
+		it("should not allow to remove a task that is not in the tasklist", function() {
 			test3task = new Task("TestRemoveNotExisting");
 			expect(function() {
 				tasklist2.removeTask(test3task);
