@@ -22,7 +22,4 @@ describe("Task", function() {
 			expect(emptytask.done).toBeFalsy();
 		});
 	});
-
-	
-	
 });
