@@ -1,0 +1,35 @@
+/************************************ Colors picked with paletton 
+Palette-URL: http://paletton.com/#uid=30u0u0k7UUa3cZA5wXlaiQ5cFL3
+****************************************************************/
+
+/*STRUCTURE-STYLES*/
+
+.container {
+	background-color: #E5ECFB;
+	background-image: repeating-linear-gradient(30deg, transparent, transparent 35px, rgba(249, 250, 252,.5) 35px, rgba(249, 250, 252,.5) 70px);
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.well {
+	max-width: 30%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/*HEADER-STYLES*/
+
+h1 {
+	font-weight: bold;
+	font-size: 3em;
+}
+
+h2 {
+	text-decoration: underline;
+}
+
+/*LIST-STYLES*/
+
+ul {
+	list-style-type: none;
+}

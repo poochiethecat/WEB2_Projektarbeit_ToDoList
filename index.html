@@ -3,27 +3,34 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
+	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
 	<script src="src/Task.js"></script>
 	<script src="src/TaskList.js"></script>
-	<link src="styles/custom.css" type="text/css" rel="stylesheet" />
+	
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-	<script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+	<link rel="stylesheet" type="text/css" href="styles/custom.css">
+
+	
 </head>
 <body>
-	<h1>TO DOs</h1>
-	<!--dropdown to select to do list-->
-	<!--list-->
-	<form>
-		<ul>
-			<li>
-				<input type="checkbox">
-				Task
-				<button class="removetaskbutton">remove task</button>
-			</li>
-		<ul>
-		<input type="text" name="newtask" id="newtask" placeholder="new task">
-		<button id="addtaskbutton">add task</button>
-	</form> 
-
+	<div class="container text-center">
+		<h1>TO DO</h1>
+		<div class="well">
+			<h2>WORK</h2>
+			<!--dropdown to select to do list-->
+			<!--list-->
+			<form>
+				<ul>
+					<li>
+						<input type="checkbox">
+						Task
+						<button class="removetaskbutton">remove task</button>
+					</li>
+				</ul>
+				<input type="text" name="newtask" id="newtask" placeholder="new task">
+				<button id="addtaskbutton">add task</button>
+			</form> 
+		</div>
+	</div>
 </body>
 </html>
