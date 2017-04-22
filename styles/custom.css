@@ -17,6 +17,10 @@ Palette-URL: http://paletton.com/#uid=30u0u0k7UUa3cZA5wXlaiQ5cFL3
 	margin-right: auto;
 }
 
+div #upperpart {
+	padding-bottom: 20px;
+}
+
 /*HEADER-STYLES*/
 
 h1 {
