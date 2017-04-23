@@ -11,20 +11,34 @@ TaskList.prototype.size = function() {
 };
 
 TaskList.prototype.createTask = function(title) {
-    var _task = new Task(title);
-    this.tasks.push(_task);
-    return _task;
+    if(this.titleIsNotNew(title)) {
+        alert("this task already exists.");
+    } else {
+        var _task = new Task(title);
+        this.tasks.push(_task);
+        return _task;
+    }
+};
+
+TaskList.prototype.titleIsNotNew = function(title){
+    var alreadyhere = false;
+    $.each(this.tasks, function(index, task) {
+        if (title == task.title) {
+            alreadyhere = true;
+        }
+    });
+    return alreadyhere;
 };
 
 TaskList.prototype.render = function() {
     var ulelement = $("<ul></ul>")
-        if (this.size()>0){
+        if (this.size()>0) {
             $.each(this.tasks, function(index, task) {
                 ulelement.append(task.render());
 		});
 	}
-  return $(ulelement);
-}
+    return $(ulelement);
+};
 
 TaskList.prototype.removeTask = function (task) {
         if (this.tasks.indexOf(task) !== (-1)) {
@@ -33,7 +47,7 @@ TaskList.prototype.removeTask = function (task) {
             });
 
         } else {
-            throw new Error("This task doesnt exist in list.");
+            alert("This task doesnt exist in list.");
         }
 };
 
@@ -45,6 +59,5 @@ TaskList.prototype.cleanUp = function() {
         }
     });
     $("#taskList").empty().append(thatlist.render());
-
-}
+};
 
