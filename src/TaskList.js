@@ -11,13 +11,9 @@ TaskList.prototype.size = function() {
 };
 
 TaskList.prototype.createTask = function(title) {
-    if(this.titleIsNotNew(title)) {
-        alert("this task already exists.");
-    } else {
-        var _task = new Task(title);
-        this.tasks.push(_task);
-        return _task;
-    }
+    var _task = new Task(title);
+    this.tasks.push(_task);
+    return _task;
 };
 
 TaskList.prototype.titleIsNotNew = function(title){
