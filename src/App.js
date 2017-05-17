@@ -2,15 +2,11 @@
 
 var taskList;
 
-$(function() {
-
-    taskList = new TaskList();
-
-    taskList.createTask("");
+var init = (taskList) => {
+    $('#taskList').append(taskList.render());
 
     console.log('Application successfully initialized');
-        
-    $('#taskList').append(taskList.render());
+
 
     $('#createTask').click(function(event) {
         event.preventDefault();
@@ -26,5 +22,22 @@ $(function() {
     $('#saveTasks').click(function(event) {
         taskList.save();
     });
-    
+};
+
+$(function() {
+
+
+    var id = window.location.hash.substring(1);
+
+    if(id != '') {
+        console.log(id);
+        TaskList.load(id,init);
+    } else {
+        taskList = new TaskList();
+        taskList.createTask("");
+        init(taskList);
+    }
+
+
+
 });

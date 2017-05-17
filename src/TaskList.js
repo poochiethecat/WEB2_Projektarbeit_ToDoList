@@ -27,7 +27,7 @@ TaskList.prototype.titleIsNotNew = function(title){
 };
 
 TaskList.prototype.render = function() {
-    var ulelement = $("<ul></ul>")
+    var ulelement = $("<ul></ul>");
         if (this.size()>0) {
             $.each(this.tasks, function(index, task) {
                 ulelement.append(task.render());
@@ -58,7 +58,7 @@ TaskList.prototype.cleanUp = function() {
 };
 
 TaskList.prototype.toJSON = function () {
-    var _hash = { id: this.id, title: this.title, tasks: [] }
+    var _hash = { id: this.id, title: this.title, tasks: [] };
     var _i;
     for (_i = 0; _i < this.tasks.length; _i += 1) {
         _hash.tasks.push({
@@ -81,8 +81,8 @@ TaskList.prototype.save = function () {
     var _url = 'http://zhaw.herokuapp.com/task_lists/';
     if (this.id) { _url += this.id; }
     $.post(_url, this.toJSON(), function(data) {
-    _that.id = JSON.parse(data).id;
-    window.location.hash = _that.id
+        _that.id = JSON.parse(data).id;
+        window.location.hash = _that.id;
     });
 };
 
@@ -96,7 +96,8 @@ TaskList.prototype.save = function () {
  */
 TaskList.load = function (id, callback) {
     var taskList = new TaskList();
-    $.getJSON('http://zhaw.herokuapp.com/task_lists/' + id, function (data) {
+    var url = 'http://zhaw.herokuapp.com/task_lists/' + id;
+    $.getJSON(url, function (data) {
         taskList.id = data.id;
         $.each(data.tasks, function (index, task) {
             var t = taskList.createTask(task.title);
@@ -105,4 +106,4 @@ TaskList.load = function (id, callback) {
         taskList.title = data.title;
         callback(taskList);
     });
-}
+};
