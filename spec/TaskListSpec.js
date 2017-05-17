@@ -30,7 +30,7 @@ describe("TaskList", function() {
 
     beforeEach(function () {
       // mock the ajax call to the server loading the tasklist
-      spyOn($, "getJSON").and.callFake(function (url, callback) {
+      spyOn($, "getJSON").andCallFake(function (url, callback) {
         callback({
           id: 'demo-list',
           title: 'the list',
