@@ -57,3 +57,52 @@ TaskList.prototype.cleanUp = function() {
     $("#taskList").empty().append(thatlist.render());
 };
 
+TaskList.prototype.toJSON = function () {
+    var _hash = { id: this.id, title: this.title, tasks: [] }
+    var _i;
+    for (_i = 0; _i < this.tasks.length; _i += 1) {
+        _hash.tasks.push({
+            title: this.tasks[_i].title,
+            done:  this.tasks[_i].done
+        });
+    }
+    return JSON.stringify(_hash);
+};
+
+/*
+ * persists the tasklist to the server.
+ *
+ * for tasklists without id (not yet persisted) the id
+ * is written back to the model after it is received from
+ * the server.
+ */
+TaskList.prototype.save = function () {
+    var _that = this;
+    var _url = 'http://zhaw.herokuapp.com/task_lists/';
+    if (this.id) { _url += this.id; }
+    $.post(_url, this.toJSON(), function(data) {
+    _that.id = JSON.parse(data).id;
+    window.location.hash = _that.id
+    });
+};
+
+/*
+ * Loads the given tasklist from the server.
+ *
+ * @param {string} id - unique identifier of the tasklist to load
+ * @param {function} callback - method to call after the tasklist
+ *   was successfully loaded. receives fully populated tasklist
+ *   object as first and only parameter.
+ */
+TaskList.load = function (id, callback) {
+    var taskList = new TaskList();
+    $.getJSON('http://zhaw.herokuapp.com/task_lists/' + id, function (data) {
+        taskList.id = data.id;
+        $.each(data.tasks, function (index, task) {
+            var t = taskList.createTask(task.title);
+            t.done = task.done;
+        });
+        taskList.title = data.title;
+        callback(taskList);
+    });
+}

@@ -6,10 +6,7 @@ $(function() {
 
     taskList = new TaskList();
 
-    taskList.createTask("water plants");
-    taskList.createTask("konmari my wardrobe");
-    taskList.createTask("setup todo list");
-    taskList.tasks[2].done = true;
+    taskList.createTask("");
 
     console.log('Application successfully initialized');
         
@@ -27,7 +24,7 @@ $(function() {
     });
 
     $('#saveTasks').click(function(event) {
-        alert('please note that this click did not really save your task.');
+        taskList.save();
     });
     
 });
